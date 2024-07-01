@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <title>Elan & nVision</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+        <script src="https://unpkg.com/split-type"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var targetIds=["a","b","c","d","e","f","g"]
+                var e=document.querySelectorAll("span");
+                var targetelements=[];
+                e.forEach(element=>{
+                    if(targetIds.includes(element.id)){
+                        targetelements.push(element);
+                    }
+                });
+                targetelements.forEach(element=>{
+                    element.addEventListener('mouseover',()=>{
+                         var x=element.id;
+                         var tween=gsap.fromTo("#"+x,{fontSize:"2.5rem"},{fontSize:"2.8rem",duration:0.3,ease:"linear"});
+                         tween.play();
+                    });
+                    element.addEventListener('mouseout',()=>{
+                        var y=element.id;
+                        gsap.to("#"+y,{fontSize:"2.5rem"});
+                        
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="boxes">
+            <span id="a"><img src="https://static.vecteezy.com/system/resources/thumbnails/013/274/925/original/animated-outlined-house-home-icon-free-video.jpg" alt="home" width="100rem" height="50rem"></span>
+            <span id="b">Events</span>
+            <span id="c">Competitions</span>
+            <span id="d">Litfest</span>
+            <span id="e">SocialCause</span>
+            <span id="f">Workshops</span>
+            <span id="g">Team</span>
+        </div>
+        <div class="blank"></div>
+        <div class="image">
+           <center>
+              <img src="https://elan-beta.web.app/assets/elan.png" alt="elan_logo" width="170vw" height="140vh">
+           </center>
+           <script>
+              gsap.fromTo('.image',{opacity:0},{opacity:1,delay:1.5});
+           </script>
+        </div>
+        <div id="i">
+           <span id="h1">Elan</span>
+        </div>
+        <script>
+            var mytext= new SplitType('#h1');
+            gsap.to('.char',{
+             y:0,
+             stagger:0.05,
+             delay:0.2,
+             duration:0.1
+            });
+        </script>
+        <div id="j">
+            <div id="h2">&</div>
+            <script>
+                const letterElement = document.getElementById('h2');
+                letterElement.addEventListener('animationend', () => {
+                letterElement.classList.add('reset');
+                });
+            </script>
+            <div id="h3">ηVision</div>
+            <script>
+                gsap.fromTo('#h3',{opacity:0,y:-50},{opacity:1,y:0,duration:1,delay:1.1,ease:"bounce"});
+                // gsap.fromTo('#h3',{opacity:0},{opacity:1,delay:1.1,duration:1,ease:"steps(12)"});
+                gsap.fromTo('.boxes span',{opacity:0},{opacity:1,delay:1.7,stagger:0.1,duration:0.6,ease:"power3"});
+            </script>
+        </div>
+        <div class="arrow_image">
+            <center>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2mQARLMR3Js1KcUA0Bea5Zkc91-uk8QYlQQ&s" alt="down arrow" width="70rem" height="70rem">
+            </center>
+        </div>
+        <div id="k">
+          <div class="box1">
+           <p id="colleges">250+</p>
+           <p id="colleges1">COLLEGES</p>
+          </div>
+          <div class="box2">
+            <p id="footfall">10k+</p>
+            <p id="footfall1"> FOOTFALL</p>
+          </div>
+        </div>
+        <div id="l">
+           <div class="box3">
+            <p id="events">40+</p>
+            <p id="events1">EVENTS</p>
+           </div>
+        </div>
+         <script>
+          /*document.addEventListener("DOMContentLoaded", (event) => {
+           gsap.registerPlugin(ScrollTrigger)
+           const boxesconfig=[
+            {container:"#k",id:"#box1"},{container:"#k",id:"#box2"},{container:"#l",id:"#box3"}];
+           const maxRotation=-55;0
+           const maxTranslation=-720;0
+           let currentRotation =-35;
+           let currentTranslation= -200;
+           let currentOpacity = 0;
+           boxesconfig.forEach(config=>{
+            const box=document.querySelector(boxesconfig.id);
+            ScrollTrigger.create({
+             trigger:boxesconfig.container,
+             start:"top bottom",
+             end:"bottom 95%",
+             markers:true,
+             onUpdate:(self) =>{
+                const progress = self.progress;
+                const reverseprogress=1-progress;
+                if(boxesconfig.id=='#box3'){
+                    currentRotation = maxRotation * progress;
+                    currentTranslation = maxTranslation * progress;
+                    currentOpacity = 1- reverseprogress;
+                }
+                else{
+                   currentRotation = maxRotation * reverseprogress;
+                   currentTranslation = maxTranslation * reverseprogress;
+                   currentOpacity = 1- reverseprogress; // Decrease opacity with progress
+                console.log("current rotation :"+currentRotation);}
+                gsap.to(box, { rotation: currentRotation, x: currentTranslation, opacity: currentOpacity, overwrite: 'auto' });
+             },scrub:true
+            });
+           });
+        });*/
+         </script>
+         <p id="about">About Us</p>
+         <script>
+            var mytxt1=new SplitType("#about");
+            document.addEventListener("DOMContentLoaded", (event) => {
+              gsap.to('.char',{scrollTrigger:{
+                trigger:"#about",
+                toggleActions:"restart restart restart restart",
+                start:"top bottom",
+                },
+                y:0,
+                stagger:0.05,
+                delay:0.4,
+                duration:0.1
+             });
+            });
+         </script>
+         <p id="text">Elan and ηVision, the annual techno-cultural gala of the Indian Institute of Technology (IIT) Hyderabad, stand as vibrant pillars that epitomize creativity, innovation, and community engagement. This grand celebration, widely recognized as one of the largest festivals in South India, adeptly merges cultural richness with technological prowess, uniting a diverse array of talents and ideas. Elan, representing the cultural facet, and ηVision, embodying the technological dimension, collaboratively craft an immersive experience for both participants and attendees.</p>
+         <div style="margin: 30px;"></div>
+         <p id="text">Fundamentally, Elan and ηVision function as high-level forums where students can showcase their skills, share thought-provoking concepts, and explore the unexplored territories of human potential. The celebration has evolved into a popular occasion that is felt throughout the entire region and is no longer limited to the grounds of IIT Hyderabad. Its importance extends beyond the walls of academic institutions, drawing participants, experts, and enthusiasts from various fields and backgrounds.</p>
+         <div style="margin: 30px;"></div>
+         <p id="text">Elan, the cultural feast, opens out into a vivid tapestry of artistic manifestations. Elan symbolizes innovation and artistic virtuosity in everything from dance performances that elegantly weave storylines via graceful movements to musical renditions that span a wide range of genres. The stage transforms into a large canvas on which individuals paint their stories, presenting the audience with an enthralling mosaic of ethnic diversity.</p>
+         <div style="margin: 30px;"></div>
+         <p id="text">On the other hand, ηVision explores the frontiers of innovation and technology. It acts as a testing ground for aspiring engineers, tech enthusiasts, and visionaries to present their ideas, inventions, and answers to practical problems. This part is characterized by workshops, hackathons, and technical exhibitions that offer an enticing peek into the future of technological marvels. The exceptional ability of Elan and ηVision to skillfully combine these apparently unrelated worlds into a beautiful and melodious celebration is what makes them stand out.</p>
+         <p class="highlights">Highlights</p>
+         <div class="images">
+             <img id="img1" src="https://elan-beta.web.app/assets/IMG_9462-1439f368.jpg">
+             <img id="img1" src="https://elan-beta.web.app/assets/IMG_08381-e1d16850.jpg">
+             <img src="https://elan-beta.web.app/assets/IMG_UN-87319a1f.jpg" id="img1">
+             <img id="img1" src="https://elan-beta.web.app/assets/CCH04690-7432074d.jpg">
+             <img id="img2" src="https://elan-beta.web.app/assets/IMG_9325-dc6e4781.jpg">
+             <img id="img2" src="https://elan-beta.web.app/assets/IMG_0423-fa58b925.jpg">
+             <img id="img2" src="https://elan-beta.web.app/assets/IMG_7492-09157a46.jpg">
+             <img id="img2" src="https://elan-beta.web.app/assets/IMG_0523-290798c9.jpg">
+ 
+             <img id="img3" src="https://elan-beta.web.app/assets/IMG_4439-fb833fa6.jpg">
+             <img id="img3" src="https://elan-beta.web.app/assets/CCH05034-1f7c4fb9.jpg">
+             <img id="img3" src="https://elan-beta.web.app/assets/CCH04702-5bbad749.jpg">
+             <img id="img3" src="https://elan-beta.web.app/assets/IMG_4321-8c2e3f0b.jpg">
+             <img id="img4" src="https://elan-beta.web.app/assets/DSC_0214-2a861fe4.jpg">
+             <img id="img4" src="https://elan-beta.web.app/assets/DSC0005-86ba5dbe.jpg">
+             <img id="img4" src="https://elan-beta.web.app/assets/DSC_9674-a703628b.jpg">
+             <img id="img4" src="https://elan-beta.web.app/assets/DSC_0405-1828d0be.jpg">
+         </div>
+         <script>
+             // use a script tag or an external JS file
+             document.addEventListener("DOMContentLoaded", (event) => {
+              // gsap code here!
+              var mytxt2=new SplitType(".highlights");
+              gsap.to('.char',{scrollTrigger:{
+                trigger:".highlights",
+                toggleActions:"restart restart none none",},
+                y:0,
+                stagger:0.05,
+                delay:0.4,
+                duration:0.1
+                });
+              gsap.from("#img1",{scrollTrigger:{
+                 trigger:"#img1",
+                 toggleActions:"restart none none none"},
+                 opacity:0.2,duration:2,stagger:0.2});
+              gsap.from("#img2",{scrollTrigger:{
+                 trigger:"#img2",
+                 toggleActions:"restart none none none"},
+                 opacity:0.2,duration:2,stagger:0.2});
+              gsap.from("#img3",{scrollTrigger:{
+                 trigger:"#img3",
+                 toggleActions:"restart none none none"},
+                 opacity:0.2,duration:2,stagger:0.2});
+              gsap.from("#img4",{scrollTrigger:{
+                 trigger:"#img4",
+                 toggleActions:"restart none none none"},
+                 opacity:0.2,duration:2,stagger:0.2});
+              });
+            </script>
+
+    </body>
+</html>
+

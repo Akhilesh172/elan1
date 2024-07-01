@@ -1,0 +1,136 @@
+body{
+    background-color:rgb(0, 0, 0);
+}
+#b,#c,#d,#e,#f,#g{
+    color: rgba(255, 255, 255, 0.418);
+    font-size: 2.5rem;
+    margin-right: 2.5vw;
+}
+/*.boxes{
+    position: fixed;
+    top: 0px;
+}*/
+#b:hover{color: white;} #c:hover{color: white;} #d:hover{color: white;} #e:hover{color: white;} #f:hover{color: white;} #g:hover{color: white;}
+.blank{
+    margin: 15vh;
+}
+#h1,#h2,#h3,#about{
+    font-size: 8rem;
+    font-stretch: ultra-expanded;
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    width: screen;
+    max-width: 100%;
+}
+#i{
+    margin-left: 20vw;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    line-height: 5.9rem;
+}
+.char{
+    transform: translateY(8rem);
+    transition: transform 0.5s;
+}
+#j{
+    margin-left: 35vw;
+    display:flex;
+    
+}
+#h2{
+    transform: rotateX(90deg);
+    animation: mymove 1s;
+    animation-delay: 0.6s;
+    &.reset{
+        transform: rotateX(0deg);
+    }
+}
+@keyframes mymove {
+    from{ rotate: x 180deg;}
+    to{   rotate: x -90deg;}
+}
+.arrow_image{
+    margin-top: 10vh;
+}
+#about{
+    font-size: 5rem;
+    text-align: center;
+    font-weight: 700;
+}
+.box1,.box2,.box3{
+    width: 40rem;
+    height: 22rem;
+    background-color: rgba(128, 128, 128, 0.125);
+    border-radius: 1.4rem;
+    color: white;
+    box-sizing: border-box;
+    margin: 4rem;
+    margin-left: 6rem;
+}
+.box1:hover{
+    background-color: rgba(255, 228, 196, 0.552);
+}
+.box2:hover{
+    background-color: rgba(184, 135, 11, 0.615);
+}
+.box3:hover{
+    background-color: rgba(255, 255, 255, 0.548);
+    color: black;
+}
+#colleges,#footfall,#events{ 
+    font-size: 5rem;
+    padding: 2.5rem;
+    margin:-2px; 
+}
+#colleges1,#footfall1,#events1{
+    text-align: end right;
+    font-size: 3rem;
+    padding-left: 23rem;
+    padding-top: 3rem;
+}
+#k{
+    display: flex;
+}
+#events1{
+    padding-left: 27rem;
+}
+.box2{
+
+   margin-left: -2rem;
+   margin-top: 16rem;
+
+}
+.box3{
+    margin-top: -14rem;
+}
+.box1{
+
+    /*transform: rotateZ(-55deg);
+    translate: x -730px;*/
+}
+#about{
+    margin-top: -3rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    line-height: 4rem;
+}
+#text{
+    color: white;
+    margin:0px 250px;
+    font-size: 30px;
+    font-weight: 200;
+    text-align: justify;
+}
+.highlights{
+    color: white;
+    font-size: 70px;
+    text-align: center;
+    font-weight: bolder;
+    line-height: 5.9rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+#img1,#img2,#img3,#img4{
+    margin:10px;
+    height:250px;
+    width: 350px;
+    border-radius: 10px;
+}
